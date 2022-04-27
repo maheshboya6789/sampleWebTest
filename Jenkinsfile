@@ -1,9 +1,12 @@
 pipleline{
     agent any
     stages{
+        stage('Git SCM'){
+            git 'https://github.com/maheshboya6789/sampleWebTest.git'
+        }
         stage('Sonar Quality Check'){
-            agent{
-                docker{
+            agent {
+                docker {
                     image 'openjdk:11'
                 }
             }
